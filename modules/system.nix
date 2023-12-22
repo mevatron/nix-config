@@ -8,9 +8,9 @@ in {
   # ============================= User related =============================
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ryan = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "wlucas";
+    description = username;
     intialPassword = "password";
     extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [

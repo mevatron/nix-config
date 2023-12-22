@@ -16,7 +16,7 @@
   # Bootloader.
   boot.loader = {
     efi = {
-      canTouchEfiVariables = true;
+      canTouchEfiVariables = false;
       efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
     };
     grub = {

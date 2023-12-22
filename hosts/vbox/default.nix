@@ -7,8 +7,8 @@
 {
   imports =
     [
-      ../../modules/kde.nix
       ../../modules/system.nix
+      ../../modules/kde.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

@@ -37,7 +37,7 @@
    user = "wlucas";
    in {
     nixosConfigurations = {
-      vbox = nixpkgs.lib.nixosSystem {
+      vbox = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
 
         specialArgs = {

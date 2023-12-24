@@ -55,7 +55,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.extraSpecialArgs = inputs;
+            home-manager.extraSpecialArgs = {
+                inherit inputs;
+                pkgs-unstable = import nixpkgs-unstable {
+                    system = system;
+                    config.allowUnfree = true;
+                };
+            };
             home-manager.users.${user} = import ./home;
           }
         ];

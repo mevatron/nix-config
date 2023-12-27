@@ -67,22 +67,35 @@
         ];
       };
 
-      #msi-rtx4090 = nixpkgs.lib.nixosSystem {
-      #  system = "x86_64-linux";
+      lenovo-legion-slim-5 = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
 
-      #  modules = [
-      #    ./hosts/vbox
+        specialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+                system = system;
+                config.allowUnfree = true;
+            };
+        };
 
-      #    home-manager.nixosModules.home-manager
-      #    {
-      #      home-manager.useGlobalPkgs = true;
-      #      home-manager.useUserPackages = true;
+        modules = [
+          ./hosts/lenovo-legion-slim-5
 
-      #      home-manager.extraSpecialArgs = inputs;
-      #      home-manager.users.${user} = import ./home;
-      #    }
-      #  ];
-      #};
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.extraSpecialArgs = {
+                inherit inputs;
+                pkgs-unstable = import nixpkgs-unstable {
+                    system = system;
+                    config.allowUnfree = true;
+                };
+            };
+            home-manager.users.${user} = import ./home;
+          }
+        ];
+      };
     };
   };
 }

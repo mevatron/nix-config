@@ -80,7 +80,7 @@
         };
 
         modules = [
-          nixos-hardware.nixosModules.lenovo-legion-16achg6-nvidia
+          nixos-hardware.nixosModules.lenovo-legion-16achg6-hybrid
           ./hosts/lenovo-legion-slim-5
 
           home-manager.nixosModules.home-manager

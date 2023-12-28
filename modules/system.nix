@@ -101,6 +101,7 @@ in {
     curl
     git
     lm_sensors # for `sensors` command
+    lshw
     pciutils
   ];
 

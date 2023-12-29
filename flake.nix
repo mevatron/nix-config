@@ -23,7 +23,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:mevatron/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -32,7 +31,6 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    nixos-hardware,
     home-manager,
     ...
   }: let
@@ -80,7 +78,6 @@
         };
 
         modules = [
-          nixos-hardware.nixosModules.lenovo-legion-16aph8-hybrid
           ./hosts/lenovo-legion-slim-5
 
           home-manager.nixosModules.home-manager

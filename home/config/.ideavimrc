@@ -1,0 +1,10 @@
+set surround
+set multiple-cursors
+
+inoremap kj <Esc>
+
+let mapleader = ","
+
+nmap <leader>s :action SearchEverywhere<cr>
+nmap <leader>f :action FindInPath<cr>
+nmap == :action ReformatCode<cr>

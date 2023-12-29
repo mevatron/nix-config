@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./config
     ./programs
   ];
 

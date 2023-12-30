@@ -105,6 +105,10 @@ in {
     pciutils
   ];
 
+  programs = {
+    kdeconnect.enable = true;
+  };
+
   # Enable docker
   virtualisation.docker.enable = true;
 

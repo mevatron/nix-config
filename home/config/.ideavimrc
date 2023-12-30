@@ -1,10 +1,23 @@
+set number relativenumber
 set surround
 set multiple-cursors
+set idearefactormode=keep
+set ideajoin
 
 inoremap kj <Esc>
 
 let mapleader = ","
 
+map mn <A-n>
+map mx <A-x>
+map mp <A-p>
+
+nmap gi :action GotoImplementation<cr>
+nmap gb :action Back<cr>
+nmap <leader>r :action Run<cr>
+nmap <leader>e :action Stop<cr>
 nmap <leader>s :action SearchEverywhere<cr>
 nmap <leader>f :action FindInPath<cr>
+nmap <leader>u :action FindUsages<cr>
+
 nmap == :action ReformatCode<cr>

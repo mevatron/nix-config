@@ -23,11 +23,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1703882495,
-        "narHash": "sha256-5S1fX1eU1TzrJe//Uvnm2PADKnywmzDjCCaoP2hZkpI=",
+        "lastModified": 1703905468,
+        "narHash": "sha256-e9kgs18pgz/I6YZOf/2EUaoXdLWRziY7VXLFnLV5ELo=",
         "owner": "mevatron",
         "repo": "nixos-hardware",
-        "rev": "6e0c2499697c8865e62c84756d1356874e8c34a6",
+        "rev": "45c836e8a109747d09c962ce89bffd76225ab981",
         "type": "github"
       },
       "original": {

@@ -36,7 +36,7 @@
     home-manager,
     ...
   }: let
-   user = "wlucas";
+    user = "wlucas";
    in {
     nixosConfigurations = {
       vbox = nixpkgs.lib.nixosSystem rec {

@@ -36,17 +36,18 @@
     home-manager,
     ...
   }: let
-    user = "wlucas";
+    system = "x86_64-linux";
+    username = "wlucas";
+    pkgs-unstable = import nixpkgs-unstable {
+        system = system;
+        config.allowUnfree = true;
+    };
    in {
     nixosConfigurations = {
       vbox = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-
+        inherit system;
         specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-                system = system;
-                config.allowUnfree = true;
-            };
+            inherit pkgs-unstable;
         };
 
         modules = [
@@ -58,25 +59,17 @@
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-                inherit inputs;
-                pkgs-unstable = import nixpkgs-unstable {
-                    system = system;
-                    config.allowUnfree = true;
-                };
+                inherit inputs pkgs-unstable;
             };
-            home-manager.users.${user} = import ./home;
+            home-manager.users.${username} = import ./home;
           }
         ];
       };
 
       lenovo-legion-slim-5 = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-
+        inherit system;
         specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-                system = system;
-                config.allowUnfree = true;
-            };
+            inherit pkgs-unstable;
         };
 
         modules = [
@@ -89,13 +82,9 @@
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-                inherit inputs;
-                pkgs-unstable = import nixpkgs-unstable {
-                    system = system;
-                    config.allowUnfree = true;
-                };
+                inherit inputs pkgs-unstable;
             };
-            home-manager.users.${user} = import ./home;
+            home-manager.users.${username} = import ./home;
           }
         ];
       };

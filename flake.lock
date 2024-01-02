@@ -23,16 +23,16 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1704141282,
-        "narHash": "sha256-MoFGUL90yMtP8I1Z6sUn6+/QdaXOAhwpR2rlSujS28k=",
+        "lastModified": 1704143789,
+        "narHash": "sha256-23Fs4nMwkUQ8vZ3BqxZNZFuXkWxr1qkuT94n2dPkn6E=",
         "owner": "mevatron",
         "repo": "nixos-hardware",
-        "rev": "dfdba22b8b5db4f42c9247175c7b9d0a0ccbfd02",
+        "rev": "714b404ac558e709c0c36a7442b2f134057bb2a7",
         "type": "github"
       },
       "original": {
         "owner": "mevatron",
-        "ref": "master",
+        "ref": "pr-add-lenovo-legion-16aph8",
         "repo": "nixos-hardware",
         "type": "github"
       }

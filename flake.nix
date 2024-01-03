@@ -76,6 +76,10 @@
           nixos-hardware.nixosModules.lenovo-legion-16aph8
           ./hosts/lenovo-legion-slim-5
 
+          # add the following inline module definition
+          #   here, all parameters of modules are passed to overlays
+          (args: { nixpkgs.overlays = import ./overlays args; })
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

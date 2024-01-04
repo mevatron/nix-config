@@ -12,7 +12,7 @@ in {
     isNormalUser = true;
     description = username;
     initialPassword = "password";
-    extraGroups = ["docker" "networkmanager" "wheel"];
+    extraGroups = ["docker" "networkmanager" "vboxusers" "wheel"];
     openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDnlJNB9dMn0q+IZEk2/r9LB3eyokMxTRJtQPbGweXy5yXgrDoNvfvQislsqRpI4eijS4i4hjvxNherUadAcNLHYXmrNzHv5q51LveRltYR8TtaedeCXNxt7fNJbn6FY6GDqWl9J/m6MsCI9r5x3eUnHUq9itYlC/tckuZhkqqj+koE7lqX6QIAXD+zH3rXrACdqrEK4VWjZ+mziK0EubysUSQC5i9CH08aqB9qhscFC7RXVFSOwA/KFNp0BeeexfzErqgEtiNz9UCTcaM/jk7byzLbJanpy4tH5yAhyYNfGA60dhnN0F+WovoL6GSzqWWgTBTXSr/V0gal2/4dRzW1KC8fETFcEuDBJd4z/D6NNte5uyz+bVpvG8XY66GzbNUD812y2HrqK4pzfsZg8Zo7UWGWV3leGzCzQGmmZzlJcr3ZydTPnFw/7ii8JD8BgarIuR++f1Wh2U5dBHYCaGSX4J1nHhq7k3doL6SlJSQjZ85OYO3Ru+10rbZZEjhA9Nc= wlucas@wlucas-ThinkPad-T480"
     ];
@@ -111,6 +111,9 @@ in {
 
   # Enable docker
   virtualisation.docker.enable = true;
+
+  # Enable VirtualBox
+  virtualisation.virtualbox.host.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;

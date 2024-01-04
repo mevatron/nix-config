@@ -44,9 +44,6 @@ in {
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -132,6 +129,17 @@ in {
       # use the example session manager (no others are packaged yet so this is enabled by default,
       # no need to redefine it in your config for now)
       #media-session.enable = true;
+    };
+
+    printing = {
+      enable = true;
+      browsing = true;
+    };
+
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
     };
   };
 }

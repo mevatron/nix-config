@@ -8,7 +8,6 @@
     zip
     unzip
     p7zip
-    slack
 
     # cloud native
     docker-compose

@@ -12,10 +12,6 @@
     # cloud native
     docker-compose
     kubectl
-
-    nodejs
-    nodePackages.npm
-    nodePackages.pnpm
   ];
 
   programs = {

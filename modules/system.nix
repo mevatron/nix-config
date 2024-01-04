@@ -100,6 +100,7 @@ in {
     lm_sensors # for `sensors` command
     lshw
     pciutils
+    usbutils
   ];
 
   programs = {

@@ -11,5 +11,6 @@
         jetbrains.webstorm
 
         pkgs.okteta
+        pkgs.wireshark
     ];
 }

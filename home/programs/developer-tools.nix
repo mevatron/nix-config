@@ -13,7 +13,7 @@
         dotnet-sdk_8
         jetbrains.rider
 
-        pkgs.nodejs_20
+        pkgs.nodejs
         pkgs.nodePackages.npm
         pkgs.nodePackages.pnpm
         jetbrains.webstorm

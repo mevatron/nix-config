@@ -1,5 +1,5 @@
 { pkgs-unstable, config, lib, ... }:
 
-(self: super: {
+(final: prev: {
     ollama = pkgs-unstable.ollama;
 })

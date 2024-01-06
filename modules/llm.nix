@@ -7,5 +7,8 @@
         (import "${pkgs-unstable.path}/nixos/modules/services/misc/ollama.nix")
     ];
 
-    services.ollama.enable = true;
+    services.ollama = {
+        enable = true;
+        package = pkgs-unstable.ollama;
+    };
 }

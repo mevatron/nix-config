@@ -8,6 +8,7 @@
 
         jetbrains.idea-ultimate
 
+        python3
         jetbrains.pycharm-professional
 
         dotnet-sdk_8

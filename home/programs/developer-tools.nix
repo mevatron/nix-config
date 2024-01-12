@@ -20,6 +20,7 @@
         jetbrains.webstorm
 
         # Misc dev tools
+        pkgs.nixpkgs-fmt
         pkgs.okteta
         pkgs.tcpdump
         pkgs.wireshark

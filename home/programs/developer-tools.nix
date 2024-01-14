@@ -1,7 +1,8 @@
 {pkgs-unstable, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
-        clang_17
         cmake
+        gnumake
+        gcc13
         jetbrains.clion
 
         go

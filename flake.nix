@@ -66,7 +66,7 @@
         ];
       };
 
-      lenovo-legion-slim-5 = nixpkgs.lib.nixosSystem rec {
+      io = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
             inherit pkgs-unstable;
@@ -74,7 +74,7 @@
 
         modules = [
           nixos-hardware.nixosModules.lenovo-legion-16aph8
-          ./hosts/lenovo-legion-slim-5
+          ./hosts/io
 
           # add the following inline module definition
           #   here, all parameters of modules are passed to overlays

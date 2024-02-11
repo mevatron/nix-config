@@ -105,6 +105,7 @@ in {
 
   programs = {
     kdeconnect.enable = true;
+    direnv.enable = true;
   };
 
   # Enable docker

@@ -118,6 +118,10 @@ in {
   hardware.pulseaudio.enable = false;
   security.polkit.enable = true;
 
+  # Enable bluetooh
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   services = {
     pipewire = {
       enable = true;

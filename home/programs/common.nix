@@ -4,6 +4,9 @@
   ...
 }: {
   home.packages = with pkgs; [
+    #utils
+    dua
+
     # archives
     zip
     unzip

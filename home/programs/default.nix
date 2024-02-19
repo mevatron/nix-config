@@ -6,5 +6,6 @@
     ./common.nix
     ./developer-tools.nix
     ./git.nix
+    ./threed-printing.nix
   ];
 }

@@ -19,7 +19,10 @@
         pkgs.nodejs
         pkgs.nodePackages.npm
         pkgs.nodePackages.pnpm
-        jetbrains.webstorm
+        (jetbrains.plugins.addPlugins jetbrains.webstorm [
+          "github-copilot"
+          "ideavim"
+        ])
 
         # Misc dev tools
         pkgs.nixpkgs-fmt

@@ -9,6 +9,6 @@
 
     services.ollama = {
         enable = true;
-        package = pkgs-unstable.ollama;
+        package = (pkgs-unstable.ollama.override  { enableCuda = true; });
     };
 }

@@ -123,6 +123,9 @@ in {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # Enable OpenGL
+  hardware.opengl.enable = true;
+
   services = {
     pipewire = {
       enable = true;

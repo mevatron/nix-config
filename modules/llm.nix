@@ -9,6 +9,9 @@
 
     services.ollama = {
         enable = true;
-        package = (pkgs-unstable.ollama.override  { enableCuda = true; });
+        package = (pkgs-unstable.ollama.override  {
+            enableCuda = true;
+            linuxPackages.nvidia_x11 = config.hardware.nvidia.package;
+        });
     };
 }

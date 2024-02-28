@@ -9,9 +9,7 @@
 
     services.ollama = {
         enable = true;
-        package = (pkgs-unstable.ollama.override  {
-            enableCuda = true;
-            linuxPackages.nvidia_x11 = config.hardware.nvidia.package;
-        });
+        acceleration = "cuda";
+        package = pkgs-unstable.ollama;
     };
 }

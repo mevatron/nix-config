@@ -1,5 +1,7 @@
 {pkgs-unstable, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
+        android-studio
+
         cmake
         gnumake
         gcc13

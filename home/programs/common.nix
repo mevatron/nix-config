@@ -15,6 +15,9 @@
     # cloud native
     docker-compose
     kubectl
+
+    # multimedia
+    vlc
   ];
 
   programs = {

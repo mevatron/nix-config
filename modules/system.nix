@@ -150,5 +150,11 @@ in {
       nssmdns = true;
       openFirewall = true;
     };
+
+    udev = {
+      packages = with pkgs; [
+        android-udev-rules
+      ];
+    };
   };
 }

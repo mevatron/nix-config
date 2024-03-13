@@ -71,4 +71,5 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  services.logind.lidSwitch = "lock";
 }

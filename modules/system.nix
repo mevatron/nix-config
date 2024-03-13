@@ -101,6 +101,7 @@ in {
     lshw
     pciutils
     usbutils
+    dmidecode
   ];
 
   programs = {

@@ -1,6 +1,7 @@
 {pkgs-unstable, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
         android-studio
+        awscli2
 
         cmake
         gnumake
@@ -21,6 +22,7 @@
         pkgs.nodejs
         pkgs.nodePackages.npm
         pkgs.nodePackages.pnpm
+        pkgs.nodePackages.yarn
         (jetbrains.plugins.addPlugins jetbrains.webstorm [
           "github-copilot"
           "ideavim"

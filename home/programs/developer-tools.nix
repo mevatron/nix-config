@@ -1,23 +1,38 @@
 {pkgs-unstable, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
         android-studio
-        awscli2
+        pkgs.awscli2
 
         cmake
         gnumake
         gcc13
-        jetbrains.clion
+        (jetbrains.plugins.addPlugins jetbrains.clion [
+          "github-copilot"
+          "ideavim"
+        ])
 
         go
-        jetbrains.goland
+        (jetbrains.plugins.addPlugins jetbrains.goland [
+          "github-copilot"
+          "ideavim"
+        ])
 
-        jetbrains.idea-ultimate
+        (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
+          "github-copilot"
+          "ideavim"
+        ])
 
         python3
-        jetbrains.pycharm-professional
+        (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [
+          "github-copilot"
+          "ideavim"
+        ])
 
         dotnet-sdk_8
-        jetbrains.rider
+        (jetbrains.plugins.addPlugins jetbrains.rider [
+          "github-copilot"
+          "ideavim"
+        ])
 
         pkgs.nodejs
         pkgs.nodePackages.npm

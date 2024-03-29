@@ -16,6 +16,7 @@
     # cloud native
     docker-compose
     kubectl
+    quickemu
 
     # multimedia
     vlc

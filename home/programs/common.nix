@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     #utils
     dua
+    ffmpeg
     tree
 
     # archives

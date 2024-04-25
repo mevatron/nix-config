@@ -22,10 +22,12 @@
           "ideavim"
         ])
 
+        poetry
         python3
         (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [
           "github-copilot"
           "ideavim"
+          "nixidea"
         ])
 
         dotnet-sdk_8

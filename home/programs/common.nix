@@ -17,6 +17,7 @@
     # cloud native
     docker-compose
     kubectl
+    minikube
     quickemu
 
     # multimedia

@@ -127,6 +127,9 @@ in {
   # Enable OpenGL
   hardware.opengl.enable = true;
 
+  # Enable emulated systems
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   services = {
     pipewire = {
       enable = true;

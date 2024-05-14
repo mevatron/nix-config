@@ -6,6 +6,7 @@
             ".ideavimrc" = {
                 source = config.lib.file.mkOutOfStoreSymlink ./.ideavimrc;
             };
+
             # work around home-manager symlink bug inside of FHS environments
             ".ssh/config" = {
                 target = ".ssh/config_source";

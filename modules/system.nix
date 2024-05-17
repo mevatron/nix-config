@@ -102,6 +102,7 @@ in {
     pciutils
     usbutils
     dmidecode
+    dig
   ];
 
   programs = {
@@ -113,7 +114,7 @@ in {
   virtualisation.docker.enable = true;
 
   # Enable VirtualBox
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;

@@ -29,7 +29,14 @@
       enable = true;
       clock24 = true;
       keyMode = "vi";
-      extraConfig = "mouse on";
+      extraConfig = ''
+        set-option -g mouse on
+      '';
+      plugins = with pkgs.tmuxPlugins; [
+        better-mouse-mode
+        sensible
+        vim-tmux-navigator
+      ];
     };
 
     vim = {

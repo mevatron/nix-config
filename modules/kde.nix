@@ -1,11 +1,16 @@
 {config, pkgs, ...}:
 
 {
-    services.xserver = {
-        enable = true;
-        displayManager.sddm = {
+    services = {
+        xserver = {
             enable = true;
+            desktopManager.plasma5.enable = true;
         };
-        desktopManager.plasma5.enable = true;
+
+        displayManager = {
+            sddm = {
+                enable = true;
+            };
+        };
     };
 }

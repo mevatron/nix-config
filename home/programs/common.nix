@@ -25,6 +25,20 @@
   ];
 
   programs = {
+    bash = {
+      enable = true;
+      shellAliases = {
+        k = "kubectl";
+        rbs = "sudo nixos-rebuild switch";
+      };
+
+      initExtra = ''
+        source <(kubectl completion bash)
+        alias k=kubectl
+        complete -F __start_kubectl k
+      '';
+    };
+
     tmux = {
       enable = true;
       clock24 = true;

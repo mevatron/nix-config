@@ -11,6 +11,11 @@
           "ideavim"
         ])
 
+        (jetbrains.plugins.addPlugins jetbrains.datagrip [
+          "github-copilot"
+          "ideavim"
+        ])
+
         go
         (jetbrains.plugins.addPlugins jetbrains.goland [
           "github-copilot"

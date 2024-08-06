@@ -26,6 +26,7 @@ in {
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
+    auto-optimise-store = true;
   };
 
   # do garbage collection weekly to keep disk usage low

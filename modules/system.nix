@@ -104,6 +104,7 @@ in {
     usbutils
     dmidecode
     dig
+    ethtool
   ];
 
   programs = {

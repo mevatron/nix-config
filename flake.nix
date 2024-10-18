@@ -92,6 +92,34 @@
           }
         ];
       };
+
+      jupiter = nixpkgs.lib.nixosSystem rec {
+        inherit system;
+        specialArgs = {
+            inherit pkgs-unstable;
+        };
+
+        modules = [
+          nixos-hardware.nixosModules.common-cpu-amd
+          nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
+          ./hosts/jupiter
+
+          # add the following inline module definition
+          #   here, all parameters of modules are passed to overlays
+          (args: { nixpkgs.overlays = import ./overlays args; })
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.extraSpecialArgs = {
+                inherit inputs pkgs-unstable;
+            };
+            home-manager.users.${username} = import ./home;
+          }
+        ];
+      };
     };
   };
 }

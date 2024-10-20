@@ -25,6 +25,7 @@
         (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
           "github-copilot"
           "ideavim"
+          "nixidea"
         ])
 
         poetry

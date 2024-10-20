@@ -10,6 +10,7 @@
       ../../modules/system.nix
       ../../modules/kde.nix
       ../../modules/llm.nix
+      ../../modules/game-streaming.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

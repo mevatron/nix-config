@@ -75,4 +75,8 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       powerManagement.enable = true;
   };
+
+  # needed for steam support
+  hardware.graphics.enable32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
 }

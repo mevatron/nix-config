@@ -8,6 +8,7 @@
     dua
     ffmpeg
     tree
+    xclip
 
     # archives
     zip

@@ -23,6 +23,7 @@
 
     # multimedia
     vlc
+    yt-dlp
   ];
 
   programs = {

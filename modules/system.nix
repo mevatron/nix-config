@@ -52,7 +52,7 @@ in {
 
       # normal fonts
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
 
       # nerdfonts
@@ -119,7 +119,6 @@ in {
   #virtualisation.virtualbox.host.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.polkit.enable = true;
 
@@ -128,7 +127,7 @@ in {
   hardware.bluetooth.powerOnBoot = true;
 
   # Enable OpenGL
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Enable emulated systems
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];

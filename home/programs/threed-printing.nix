@@ -2,6 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        cura
+      # Currently tries to install broken `python3.12-libarcus-4.12.0`
+      # cura
     ];
 }

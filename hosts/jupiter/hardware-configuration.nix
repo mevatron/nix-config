@@ -10,6 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
   boot.kernelParams = [ ];
   boot.kernelModules = [ "kvm-amd" "usbmon" ];
   boot.extraModulePackages = [ ];

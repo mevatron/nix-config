@@ -59,7 +59,7 @@ in {
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
 
       # google-fonts
-      (google-fonts.override {fonts = ["GreatVibes"];})
+      (google-fonts.override {fonts = ["GreatVibes" "Meddon"];})
     ];
 
     # use fonts specified by user rather than default ones

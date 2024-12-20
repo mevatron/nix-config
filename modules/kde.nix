@@ -13,8 +13,4 @@
       };
     };
   };
-
-  systemd.services.plasma-powerdevil = {
-    serviceConfig.TimeoutSec = "15s";
-  };
 }

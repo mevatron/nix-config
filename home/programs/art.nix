@@ -2,8 +2,9 @@
 
 {
     home.packages = with pkgs; [
-        inkscape-with-extensions
         gimp-with-plugins
+        inkscape-with-extensions
         krita
+        photocollage
     ];
 }

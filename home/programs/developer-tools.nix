@@ -4,6 +4,7 @@
         pkgs.awscli2
 
         cmake
+        esphome
         gnumake
         gcc13
         (jetbrains.plugins.addPlugins jetbrains.clion [

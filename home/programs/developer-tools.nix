@@ -50,6 +50,7 @@
         (jetbrains.plugins.addPlugins jetbrains.webstorm [
           "github-copilot"
           "ideavim"
+          "nixidea"
         ])
 
         # Misc dev tools

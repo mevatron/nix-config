@@ -1,5 +1,6 @@
 {pkgs-unstable, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
+        aider-chat
         android-studio
         pkgs.awscli2
 

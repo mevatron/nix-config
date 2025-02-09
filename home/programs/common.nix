@@ -5,9 +5,9 @@
 }: {
   home.packages = with pkgs; [
     #utils
-    audacity
     dua
     ffmpeg
+    qdirstat
     tree
     xclip
 
@@ -23,6 +23,7 @@
     quickemu
 
     # multimedia
+    audacity
     vlc
     yt-dlp
   ];

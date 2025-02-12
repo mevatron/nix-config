@@ -13,6 +13,9 @@
   boot.kernelParams = [ "amdgpu.sg_display=0" ];
   boot.kernelModules = [ "kvm-amd" "usbmon" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0
+  '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";

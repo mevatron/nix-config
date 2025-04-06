@@ -12,8 +12,11 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelPackages = pkgs.linuxPackages_6_6;
   boot.kernelParams = [ ];
-  boot.kernelModules = [ "kvm-amd" "usbmon" ];
+  boot.kernelModules = [ "kvm-amd" "snd_hda_intel" "usbmon" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0
+  '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";

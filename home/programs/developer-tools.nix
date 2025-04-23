@@ -8,6 +8,7 @@
         pkgs.esphome
         gnumake
         gcc13
+        insomnia
         (jetbrains.plugins.addPlugins jetbrains.clion [
           "ideavim"
         ])

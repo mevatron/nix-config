@@ -7,6 +7,7 @@
     #utils
     dua
     ffmpeg
+    isoimagewriter
     qdirstat
     tree
     xclip

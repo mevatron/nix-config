@@ -4,7 +4,9 @@
     home = {
         file = {
             ".ideavimrc" = {
-                source = config.lib.file.mkOutOfStoreSymlink ./.ideavimrc;
+                source = ./.ideavimrc;
+                target = ".ideavimrc_source";
+                onChange = ''cat ~/.ideavimrc_source > ~/.ideavimrc'';
             };
 
             # work around home-manager symlink bug inside of FHS environments

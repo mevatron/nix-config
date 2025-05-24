@@ -56,7 +56,8 @@ in {
       noto-fonts-emoji
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
 
       # google-fonts
       (google-fonts.override {fonts = ["GreatVibes" "Meddon"];})
@@ -122,7 +123,7 @@ in {
   #virtualisation.virtualbox.host.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.polkit.enable = true;
 
   # Enable bluetooh

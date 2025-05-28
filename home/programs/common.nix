@@ -50,6 +50,7 @@
       keyMode = "vi";
       extraConfig = ''
         set-option -g mouse on
+        bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -selection clipboard"
       '';
       plugins = with pkgs.tmuxPlugins; [
         better-mouse-mode

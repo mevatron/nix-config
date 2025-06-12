@@ -152,6 +152,10 @@ in {
 
     printing = {
       enable = true;
+      drivers = [
+        pkgs.hplipWithPlugin
+        pkgs.gutenprint
+      ];
       browsing = true;
     };
 

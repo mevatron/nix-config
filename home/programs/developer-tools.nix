@@ -29,6 +29,7 @@
 
         poetry
         python3
+        uv
         (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [
           "ideavim"
           "nixidea"

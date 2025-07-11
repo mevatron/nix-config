@@ -27,6 +27,8 @@
           "nixidea"
         ])
 
+        llama-cpp
+
         poetry
         python3
         uv

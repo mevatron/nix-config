@@ -28,6 +28,8 @@
           "ideavim"
         ])
 
+        pkgs.goose-cli
+
         (jetbrains.plugins.addPlugins (jetbrains.idea-ultimate.override {
           jdk = openjdk21;
         }) [

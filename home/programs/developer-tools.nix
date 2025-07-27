@@ -7,32 +7,24 @@
         cmake
         pkgs.esphome
         gnumake
-        gcc13
+        gcc14
         insomnia
-        (jetbrains.plugins.addPlugins (jetbrains.clion.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.clion [
           "ideavim"
         ])
 
-        (jetbrains.plugins.addPlugins (jetbrains.datagrip.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.datagrip [
           "ideavim"
         ])
 
         go
-        (jetbrains.plugins.addPlugins (jetbrains.goland.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.goland [
           "ideavim"
         ])
 
         pkgs.goose-cli
 
-        (jetbrains.plugins.addPlugins (jetbrains.idea-ultimate.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
           "ideavim"
           "nixidea"
         ])
@@ -42,17 +34,13 @@
         poetry
         python3
         uv
-        (jetbrains.plugins.addPlugins (jetbrains.pycharm-professional.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [
           "ideavim"
           "nixidea"
         ])
 
         dotnet-sdk_8
-        (jetbrains.plugins.addPlugins (jetbrains.rider.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.rider [
           "ideavim"
         ])
 
@@ -60,9 +48,7 @@
         pkgs.nodePackages.npm
         pkgs.nodePackages.pnpm
         pkgs.nodePackages.yarn
-        (jetbrains.plugins.addPlugins (jetbrains.webstorm.override {
-          jdk = openjdk21;
-        }) [
+        (jetbrains.plugins.addPlugins jetbrains.webstorm [
           "ideavim"
           "nixidea"
         ])

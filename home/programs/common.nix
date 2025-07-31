@@ -9,6 +9,7 @@
     ffmpeg
     isoimagewriter
     qdirstat
+    ripgrep
     tree
     xclip
 

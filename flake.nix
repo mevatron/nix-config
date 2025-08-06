@@ -23,6 +23,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +33,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nixpkgs-master,
     nixos-hardware,
     home-manager,
     ...
@@ -42,12 +44,16 @@
         system = system;
         config.allowUnfree = true;
     };
+    pkgs-master = import nixpkgs-master {
+        system = system;
+        config.allowUnfree = true;
+    };
    in {
     nixosConfigurations = {
       vbox = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
-            inherit pkgs-unstable;
+            inherit pkgs-unstable pkgs-master;
         };
 
         modules = [
@@ -70,7 +76,7 @@
       io = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
-            inherit pkgs-unstable;
+            inherit pkgs-unstable pkgs-master;
         };
 
         modules = [
@@ -98,7 +104,7 @@
       jupiter = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
-            inherit pkgs-unstable;
+            inherit pkgs-unstable pkgs-master;
         };
 
         modules = [

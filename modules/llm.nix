@@ -1,4 +1,4 @@
-{config, lib, pkgs-unstable, ...}:
+{config, lib, pkgs-unstable, pkgs-master, ...}:
 
 {
     disabledModules = [
@@ -7,7 +7,7 @@
     ];
 
     imports = [
-        (import "${pkgs-unstable.path}/nixos/modules/services/misc/ollama.nix")
+        (import "${pkgs-master.path}/nixos/modules/services/misc/ollama.nix")
         (import "${pkgs-unstable.path}/nixos/modules/services/misc/open-webui.nix")
     ];
 
@@ -15,11 +15,14 @@
         ollama = {
             enable = true;
             acceleration = "cuda";
-            package = pkgs-unstable.ollama;
+            package = pkgs-master.ollama.overrideAttrs (oldAttrs: {
+              doCheck = false;
+            });
             host = "0.0.0.0";
             port = 11434;
             environmentVariables = {
-                OLLAMA_FLASH_ATTENTION = "1";
+                OLLAMA_DEBUG = "2";
+#                OLLAMA_FLASH_ATTENTION = "1";
                 OLLAMA_KV_CACHE_TYPE = "q8_0";
             };
         };

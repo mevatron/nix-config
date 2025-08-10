@@ -16,17 +16,17 @@ let
 in {
   goose-cli = prev.rustPlatform.buildRustPackage rec {
     pname    = "goose-cli";
-    version  = "1.1.3";
+    version  = "1.2.0";
 
     src = prev.fetchFromGitHub {
       owner = "block";
       repo  = "goose";
       tag   = "v${version}";
-      hash  = "sha256-NoGYtAzXPp8kUfDYnDdtAG8LKqPz0BB7kmV2qOaJURY=";
+      hash  = "sha256-ER4FI2QT4wIGxk0QZbDtgJTQUI38CSMJbLT8s8Rb4Po=";
     };
 
     useFetchCargoVendor = true;
-    cargoHash          = "sha256-2WjEaGRQbgF3Og1xk50K+4lFg4I2Wi1lx+Z41bPIRSs=";
+    cargoHash          = "sha256-TTOCJMZL8BtLm/6h2DxyjSVuUjNP0RgD8jjfEB0+nGc=";
 
     nativeBuildInputs = [ prev.pkg-config prev.protobuf ];
     buildInputs       = [ prev.dbus ] ++
@@ -55,6 +55,13 @@ in {
       "--skip=providers::factory::tests::test_create_regular_provider_without_lead_config"
       "--skip=providers::factory::tests::test_lead_model_env_vars_with_defaults"
       "--skip=providers::gcpauth::tests::test_token_refresh_race_condition"
+      # HTTP transport tests that fail in sandbox
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_http_error"
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_invalid_json"
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_notification"
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_session_id_handling"
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_session_not_found"
+      "--skip=transport::streamable_http::tests::test_handle_outgoing_message_successful_request"
     ];
 
     nativeCheckInputs = [ prev.writableTmpDirAsHomeHook ];

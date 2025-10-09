@@ -22,7 +22,7 @@
           "ideavim"
         ])
 
-        pkgs.goose-cli
+        goose-cli
 
         (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
           "ideavim"

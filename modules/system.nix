@@ -39,6 +39,11 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Temporarily allow specific insecure packages
+  nixpkgs.config.permittedInsecurePackages = [
+    "python3.12-ecdsa-0.19.1"
+  ];
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 

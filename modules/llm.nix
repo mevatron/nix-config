@@ -14,7 +14,6 @@
     services = {
         ollama = {
             enable = true;
-            acceleration = "cuda";
             package = pkgs-master.ollama;
             host = "0.0.0.0";
             port = 11434;

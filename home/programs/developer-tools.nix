@@ -9,49 +9,32 @@
         gnumake
         gcc14
         insomnia
-        (jetbrains.plugins.addPlugins jetbrains.clion [
-          "ideavim"
-        ])
+        jetbrains.clion
 
-        (jetbrains.plugins.addPlugins jetbrains.datagrip [
-          "ideavim"
-        ])
+        jetbrains.datagrip
 
         go
-        (jetbrains.plugins.addPlugins jetbrains.goland [
-          "ideavim"
-        ])
+        jetbrains.goland
 
         goose-cli
 
-        (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
-          "ideavim"
-          "nixidea"
-        ])
+        jetbrains.idea-ultimate
 
         llama-cpp
 
         poetry
         python3
         uv
-        (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [
-          "ideavim"
-          "nixidea"
-        ])
+        jetbrains.pycharm-professional
 
         dotnet-sdk_8
-        (jetbrains.plugins.addPlugins jetbrains.rider [
-          "ideavim"
-        ])
+        jetbrains.rider
 
         pkgs.nodejs
         pkgs.nodePackages.npm
         pkgs.nodePackages.pnpm
         pkgs.nodePackages.yarn
-        (jetbrains.plugins.addPlugins jetbrains.webstorm [
-          "ideavim"
-          "nixidea"
-        ])
+        jetbrains.webstorm
 
         # Misc dev tools
         pkgs.nixpkgs-fmt

@@ -14,7 +14,7 @@
     services = {
         ollama = {
             enable = true;
-            package = pkgs-master.ollama;
+            package = pkgs-master.ollama-cuda;
             host = "0.0.0.0";
             port = 11434;
             environmentVariables = {

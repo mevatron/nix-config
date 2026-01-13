@@ -58,7 +58,7 @@ in {
       # normal fonts
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       # nerdfonts
       nerd-fonts.fira-code
@@ -172,7 +172,6 @@ in {
 
     udev = {
       packages = with pkgs; [
-        android-udev-rules
       ];
     };
   };

@@ -2,10 +2,10 @@
     home.packages = with pkgs-unstable; [
         aider-chat
         android-studio
-        pkgs.awscli2
+        awscli2
 
         cmake
-        pkgs.esphome
+        esphome
         gnumake
         gcc14
         insomnia
@@ -18,22 +18,21 @@
 
         goose-cli
 
-        jetbrains.idea-ultimate
+        jetbrains.idea
 
         llama-cpp
 
         poetry
         python3
         uv
-        jetbrains.pycharm-professional
+        jetbrains.pycharm
 
         dotnet-sdk_8
         jetbrains.rider
 
-        pkgs.nodejs
-        pkgs.nodePackages.npm
-        pkgs.nodePackages.pnpm
-        pkgs.nodePackages.yarn
+        nodePackages.npm
+        nodePackages.pnpm
+        nodePackages.yarn
         jetbrains.webstorm
 
         # Misc dev tools

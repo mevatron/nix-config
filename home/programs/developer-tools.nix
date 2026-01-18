@@ -22,7 +22,7 @@
 
         llama-cpp
 
-        poetry
+        pkgs.poetry
         python3
         uv
         jetbrains.pycharm

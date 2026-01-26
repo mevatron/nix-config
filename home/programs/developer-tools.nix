@@ -36,6 +36,7 @@
         jetbrains.webstorm
 
         # Misc dev tools
+        pkgs.mitmproxy
         pkgs.nixpkgs-fmt
         pkgs.okteta
         pkgs.tcpdump

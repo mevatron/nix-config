@@ -20,7 +20,7 @@
 
         jetbrains.idea
 
-        llama-cpp
+        (llama-cpp.override { cudaSupport = true; })
 
         pkgs.poetry
         python3

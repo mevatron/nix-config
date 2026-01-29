@@ -73,7 +73,7 @@
                           ${llama-server} \
                             -hf unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL \
                             --jinja \
-                            --ctx-size 32768 \
+                            --ctx-size 65535 \
                             --temp 0.7 \
                             --top-p 1.0 \
                             --min-p 0.01 \

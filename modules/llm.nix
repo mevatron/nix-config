@@ -4,11 +4,13 @@
     disabledModules = [
         "services/misc/ollama.nix"
         "services/misc/open-webui.nix"
+        "services/networking/llama-swap.nix"
     ];
 
     imports = [
         (import "${pkgs-master.path}/nixos/modules/services/misc/ollama.nix")
         (import "${pkgs-master.path}/nixos/modules/services/misc/open-webui.nix")
+        (import "${pkgs-master.path}/nixos/modules/services/networking/llama-swap.nix")
     ];
 
     services = {
@@ -34,5 +36,65 @@
                 PYDANTIC_SKIP_VALIDATING_CORE_SCHEMAS = "True";
             };
         };
+
+        llama-swap = {
+            enable = true;
+            port = 11435;
+            listenAddress = "0.0.0.0";
+
+            package = pkgs-master.llama-swap;
+
+            settings = let
+                llama-cpp = (pkgs-master.llama-cpp.override { cudaSupport = true; });
+                llama-server = lib.getExe' llama-cpp "llama-server";
+            in {
+                logLevel = "debug";
+                healthCheckTimeout = 300;
+                models = {
+                    "devstral-small-2-unsloth" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF:UD-Q4_K_XL \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
+                            --jinja \
+                            -ngl 99 \
+                            --threads -1 \
+                            --ctx-size 65535 \
+                            -b 4096 \
+                            --temp 0.15 \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+
+                    "glm-4.7-flash-unsloth" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL \
+                            --jinja \
+                            --ctx-size 32768 \
+                            --temp 0.7 \
+                            --top-p 1.0 \
+                            --min-p 0.01 \
+                            --fit on \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+                };
+            };
+        };
+
+    };
+
+    systemd.services.llama-swap.serviceConfig = {
+        StateDirectory = "llama-swap";
+        Environment = [
+            "HOME=/var/lib/llama-swap"
+            "XDG_CACHE_HOME=/var/lib/llama-swap/.cache"
+            "HF_HOME=/var/lib/llama-swap/.cache/huggingface"
+            "TRANSFORMERS_CACHE=/var/lib/llama-swap/.cache/huggingface/transformers"
+        ];
     };
 }

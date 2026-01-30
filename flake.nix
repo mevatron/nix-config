@@ -66,7 +66,7 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable;
+                inherit inputs pkgs-unstable pkgs-master;
             };
             home-manager.users.${username} = import ./home;
           }
@@ -94,7 +94,7 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable;
+                inherit inputs pkgs-unstable pkgs-master;
             };
             home-manager.users.${username} = import ./home;
           }
@@ -123,7 +123,7 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable;
+                inherit inputs pkgs-unstable pkgs-master;
             };
             home-manager.users.${username} = import ./home;
           }

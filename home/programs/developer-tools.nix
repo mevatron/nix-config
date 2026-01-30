@@ -1,4 +1,4 @@
-{pkgs-unstable, pkgs, ...}: {
+{pkgs-unstable, pkgs-master, pkgs, ...}: {
     home.packages = with pkgs-unstable; [
         aider-chat
         android-studio
@@ -20,7 +20,8 @@
 
         jetbrains.idea
 
-        (llama-cpp.override { cudaSupport = true; })
+        (pkgs-master.llama-cpp.override { cudaSupport = true; })
+        pkgs-master.mistral-vibe
 
         pkgs.poetry
         python3

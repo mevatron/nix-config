@@ -22,6 +22,7 @@
 
         (pkgs-master.llama-cpp.override { cudaSupport = true; })
         pkgs-master.mistral-vibe
+        codex
 
         pkgs.poetry
         python3

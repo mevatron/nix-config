@@ -16,12 +16,12 @@
         go
         jetbrains.goland
 
-        goose-cli
 
         jetbrains.idea
 
+        goose-cli
         (pkgs-master.llama-cpp.override { cudaSupport = true; })
-        pkgs-master.mistral-vibe
+        mistral-vibe
         codex
 
         pkgs.poetry

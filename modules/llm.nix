@@ -71,8 +71,11 @@
                     "glm-4.7-flash-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL \
+                            -hf unsloth/GLM-4.7-Flash-REAP-23B-A3B-GGUF:Q5_K_XL \
                             --jinja \
+                            -ngl 99 \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
                             --ctx-size 65535 \
                             --temp 0.7 \
                             --top-p 1.0 \

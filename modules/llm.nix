@@ -60,7 +60,7 @@
                             --jinja \
                             -ngl 99 \
                             --threads -1 \
-                            --ctx-size 65535 \
+                            --ctx-size 75000 \
                             -b 4096 \
                             --temp 0.15 \
                             --host 127.0.0.1 \

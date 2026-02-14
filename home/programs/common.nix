@@ -36,6 +36,7 @@
       shellAliases = {
         k = "kubectl";
         rbs = "sudo nixos-rebuild switch";
+        hm-prune = "nix-env --profile /home/wlucas/.local/state/nix/profiles/home-manager --delete-generations +3";
       };
 
       initExtra = ''

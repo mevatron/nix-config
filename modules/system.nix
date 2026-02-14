@@ -125,7 +125,7 @@ in {
   virtualisation.docker.enable = true;
 
   # Enable VirtualBox
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

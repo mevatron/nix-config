@@ -20,7 +20,7 @@
         jetbrains.idea
 
         goose-cli
-        (pkgs-master.llama-cpp.override { cudaSupport = true; })
+        (llama-cpp.override { cudaSupport = true; })
         mistral-vibe
         codex
 

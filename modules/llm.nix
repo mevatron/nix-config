@@ -16,7 +16,7 @@
     services = {
         ollama = {
             enable = true;
-            package = pkgs-master.ollama-cuda;
+            package = pkgs-unstable.ollama-cuda;
             host = "0.0.0.0";
             port = 11434;
             environmentVariables = {
@@ -45,7 +45,7 @@
             package = pkgs-master.llama-swap;
 
             settings = let
-                llama-cpp = (pkgs-master.llama-cpp.override { cudaSupport = true; });
+                llama-cpp = (pkgs-unstable.llama-cpp.override { cudaSupport = true; });
                 llama-server = lib.getExe' llama-cpp "llama-server";
             in {
                 logLevel = "debug";

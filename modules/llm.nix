@@ -118,6 +118,7 @@
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \
+                            --presence-penalty 1.5 \
                             --chat-template-kwargs "{\"enable_thinking\": false}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}

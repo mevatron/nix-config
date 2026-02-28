@@ -21,7 +21,6 @@
 
         goose-cli
         (llama-cpp.override { cudaSupport = true; })
-        mistral-vibe
         codex
 
         pkgs.poetry

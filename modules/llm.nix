@@ -124,6 +124,26 @@
                             --port ''${PORT}
                         '';
                     };
+
+                    "qwen-3.5-35b-a3b-instruct-unsloth" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf unsloth/Qwen3.5-35B-A3B-GGUF:UD-IQ4_NL \
+                            --jinja \
+                            -ngl 99 \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
+                            --ctx-size 65535 \
+                            --temp 0.6 \
+                            --top-p 0.95 \
+                            --top-k 20 \
+                            --min-p 0 \
+                            --presence-penalty 1.5 \
+                            --chat-template-kwargs "{\"enable_thinking\": false}" \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
                 };
             };
         };

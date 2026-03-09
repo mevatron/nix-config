@@ -27,6 +27,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    numtide.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = inputs @ {
@@ -35,6 +36,7 @@
     nixpkgs-unstable,
     nixpkgs-master,
     nixos-hardware,
+    numtide,
     home-manager,
     ...
   }: let
@@ -66,7 +68,8 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable pkgs-master;
+                inherit pkgs-unstable pkgs-master;
+                "llm-agents" = numtide;
             };
             home-manager.users.${username} = import ./home;
           }
@@ -94,7 +97,8 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable pkgs-master;
+                inherit pkgs-unstable pkgs-master;
+                "llm-agents" = numtide;
             };
             home-manager.users.${username} = import ./home;
           }
@@ -123,7 +127,8 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.extraSpecialArgs = {
-                inherit inputs pkgs-unstable pkgs-master;
+                inherit pkgs-unstable pkgs-master;
+                "llm-agents" = numtide;
             };
             home-manager.users.${username} = import ./home;
           }

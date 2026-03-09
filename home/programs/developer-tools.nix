@@ -1,6 +1,5 @@
-{pkgs-unstable, pkgs-master, pkgs, ...}: {
+{pkgs-unstable, pkgs-master, pkgs, llm-agents, ...}: {
     home.packages = with pkgs-unstable; [
-        aider-chat
         android-studio
         awscli2
 
@@ -19,9 +18,9 @@
 
         jetbrains.idea
 
-        goose-cli
         (llama-cpp.override { cudaSupport = true; })
-        codex
+        llm-agents.packages.${pkgs.system}.codex
+        llm-agents.packages.${pkgs.system}.mistral-vibe
 
         pkgs.poetry
         python3

@@ -5,7 +5,7 @@
         slack
         discord
         pkgs-unstable.element-desktop
-        pkgs-unstable.signal-desktop-bin
+        pkgs-unstable.signal-desktop
         zoom-us
     ];
 }

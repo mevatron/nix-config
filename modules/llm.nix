@@ -113,7 +113,7 @@
                             -ngl 99 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 65535 \
+                            --ctx-size 75000 \
                             --temp 0.6 \
                             --top-p 0.95 \
                             --top-k 20 \

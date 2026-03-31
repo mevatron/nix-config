@@ -92,9 +92,13 @@
                             -hf unsloth/Qwen3.5-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
                             -ngl 99 \
+                            --flash-attn auto \
+                            --swa-full \
+                            -b 1024 \
+                            -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 65535 \
+                            --ctx-size 75000 \
                             --temp 0.6 \
                             --top-p 0.95 \
                             --top-k 20 \
@@ -111,10 +115,14 @@
                             -hf unsloth/Qwen3.5-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
                             -ngl 99 \
+                            --flash-attn auto \
+                            --swa-full \
+                            -b 1024 \
+                            -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
-                            --temp 0.6 \
+                            --temp 1.0 \
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \
@@ -134,7 +142,7 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
-                            --temp 0.6 \
+                            --temp 1.0 \
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \

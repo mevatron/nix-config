@@ -119,6 +119,23 @@
                         '';
                     };
 
+                    "gemma-4-26b-a4b-unsloth" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_XL \
+                            --jinja \
+                            -ngl 99 \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
+                            --ctx-size 75000 \
+                            --temp 1.0 \
+                            --top-p 0.95 \
+                            --top-k 64 \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+
                     "qwen-3.5-35b-a3b-instruct-unsloth" = {
                         cmd = ''
                           ${llama-server} \

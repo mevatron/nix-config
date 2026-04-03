@@ -30,9 +30,9 @@
         dotnet-sdk_8
         jetbrains.rider
 
-        nodePackages.npm
-        nodePackages.pnpm
-        nodePackages.yarn
+        nodejs
+        pnpm
+        yarn
         jetbrains.webstorm
 
         # Misc dev tools

@@ -119,6 +119,9 @@ in {
   programs = {
     kdeconnect.enable = true;
     direnv.enable = true;
+    # JetBrains downloads helper binaries like semantic-search embeddings-server
+    # that expect a conventional Linux dynamic loader path.
+    nix-ld.enable = true;
   };
 
   # Enable docker

@@ -19,8 +19,8 @@
         jetbrains.idea
 
         (llama-cpp.override { cudaSupport = true; })
-        llm-agents.packages.${pkgs.system}.codex
-        llm-agents.packages.${pkgs.system}.mistral-vibe
+        llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex
+        llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mistral-vibe
 
         pkgs.poetry
         python3

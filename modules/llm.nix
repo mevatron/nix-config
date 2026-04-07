@@ -123,7 +123,7 @@
                         '';
                     };
 
-                    "gemma-4-31b-it-unsloth" = {
+                    "gemma-4-31b-unsloth" = {
                         cmd = ''
                           ${llama-server} \
                             -hf unsloth/gemma-4-31B-it-GGUF:Q4_K_S \
@@ -131,7 +131,7 @@
                             -ngl 99 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 75000 \
+                            --ctx-size 50000 \
                             --parallel 1 \
                             --temp 1.0 \
                             --top-p 0.95 \

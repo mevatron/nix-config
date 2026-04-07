@@ -48,6 +48,7 @@
                             --threads -1 \
                             --ctx-size 75000 \
                             -b 4096 \
+                            --parallel 1 \
                             --temp 0.15 \
                             --host 127.0.0.1 \
                             --port ''${PORT}
@@ -63,6 +64,7 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 65535 \
+                            --parallel 1 \
                             --temp 0.7 \
                             --top-p 1.0 \
                             --min-p 0.01 \
@@ -85,6 +87,7 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
+                            --parallel 1 \
                             --temp 0.6 \
                             --top-p 0.95 \
                             --top-k 20 \
@@ -108,12 +111,31 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
+                            --parallel 1 \
                             --temp 1.0 \
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \
                             --presence-penalty 1.5 \
                             --chat-template-kwargs "{\"enable_thinking\": false}" \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+
+                    "gemma-4-31b-it-unsloth" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf unsloth/gemma-4-31B-it-GGUF:Q4_K_S \
+                            --jinja \
+                            -ngl 99 \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
+                            --ctx-size 75000 \
+                            --parallel 1 \
+                            --temp 1.0 \
+                            --top-p 0.95 \
+                            --top-k 64 \
                             --host 127.0.0.1 \
                             --port ''${PORT}
                         '';
@@ -128,6 +150,7 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
+                            --parallel 1 \
                             --temp 1.0 \
                             --top-p 0.95 \
                             --top-k 64 \
@@ -145,6 +168,7 @@
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
                             --ctx-size 75000 \
+                            --parallel 1 \
                             --temp 1.0 \
                             --top-p 0.95 \
                             --top-k 20 \

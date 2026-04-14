@@ -3,6 +3,7 @@
         android-studio
         awscli2
 
+        pkgs.code-review-graph
         cmake
         esphome
         gnumake

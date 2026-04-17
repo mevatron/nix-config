@@ -37,43 +37,6 @@
                 logLevel = "debug";
                 healthCheckTimeout = 300;
                 models = {
-                    "devstral-small-2-unsloth" = {
-                        cmd = ''
-                          ${llama-server} \
-                            -hf unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF:UD-Q4_K_XL \
-                            --cache-type-k q8_0 \
-                            --cache-type-v q8_0 \
-                            --jinja \
-                            -ngl 99 \
-                            --threads -1 \
-                            --ctx-size 75000 \
-                            -b 4096 \
-                            --parallel 1 \
-                            --temp 0.15 \
-                            --host 127.0.0.1 \
-                            --port ''${PORT}
-                        '';
-                    };
-
-                    "glm-4.7-flash-unsloth" = {
-                        cmd = ''
-                          ${llama-server} \
-                            -hf unsloth/GLM-4.7-Flash-REAP-23B-A3B-GGUF:Q5_K_XL \
-                            --jinja \
-                            -ngl 99 \
-                            --cache-type-k q8_0 \
-                            --cache-type-v q8_0 \
-                            --ctx-size 65535 \
-                            --parallel 1 \
-                            --temp 0.7 \
-                            --top-p 1.0 \
-                            --min-p 0.01 \
-                            --fit on \
-                            --host 127.0.0.1 \
-                            --port ''${PORT}
-                        '';
-                    };
-
                     "qwen-3.5-27b-thinking-unsloth" = {
                         cmd = ''
                           ${llama-server} \
@@ -123,24 +86,6 @@
                         '';
                     };
 
-                    "gemma-4-31b-unsloth" = {
-                        cmd = ''
-                          ${llama-server} \
-                            -hf unsloth/gemma-4-31B-it-GGUF:Q4_K_S \
-                            --jinja \
-                            -ngl 99 \
-                            --cache-type-k q8_0 \
-                            --cache-type-v q8_0 \
-                            --ctx-size 50000 \
-                            --parallel 1 \
-                            --temp 1.0 \
-                            --top-p 0.95 \
-                            --top-k 64 \
-                            --host 127.0.0.1 \
-                            --port ''${PORT}
-                        '';
-                    };
-
                     "gemma-4-26b-a4b-unsloth" = {
                         cmd = ''
                           ${llama-server} \
@@ -159,22 +104,27 @@
                         '';
                     };
 
-                    "qwen-3.5-35b-a3b-instruct-unsloth" = {
+                    "qwen-3.6-35b-a3b-thinking-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/Qwen3.5-35B-A3B-GGUF:UD-IQ4_NL \
+                            -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS \
                             --jinja \
                             -ngl 99 \
+                            --flash-attn auto \
+                            --swa-full \
+                            -b 1024 \
+                            -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 100000 \
+                            --ctx-size 128000 \
                             --parallel 1 \
-                            --temp 1.0 \
+                            --temp 0.6 \
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \
-                            --presence-penalty 1.5 \
-                            --chat-template-kwargs "{\"enable_thinking\": false}" \
+                            --presence-penalty 0.0 \
+                            --repeat-penalty 1.0 \
+                            --chat-template-kwargs "{\"enable_thinking\": true, \"preserve_thinking\": true}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
                         '';

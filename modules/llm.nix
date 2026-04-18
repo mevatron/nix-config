@@ -116,7 +116,7 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 128000 \
+                            --ctx-size 180000 \
                             --parallel 1 \
                             --temp 0.6 \
                             --top-p 0.95 \

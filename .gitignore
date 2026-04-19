@@ -1,3 +1,4 @@
 .idea/
 *.iml
 /.ai/mcp/mcp.json
+.codex

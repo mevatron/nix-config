@@ -104,6 +104,22 @@
                         '';
                     };
 
+                    "qwen-3-embedding-4b" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf Qwen/Qwen3-Embedding-4B-GGUF:Q8_0 \
+                            -ngl 99 \
+                            -np 32 \
+                            --embedding \
+                            --pooling last \
+                            -ub 8192 \
+                            --ctx-size 32768 \
+                            --verbose-prompt \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+
                     "qwen-3.6-35b-a3b-thinking-unsloth" = {
                         cmd = ''
                           ${llama-server} \

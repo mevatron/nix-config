@@ -114,7 +114,6 @@
                             --pooling last \
                             -ub 8192 \
                             --ctx-size 32768 \
-                            --verbose-prompt \
                             --host 127.0.0.1 \
                             --port ''${PORT}
                         '';

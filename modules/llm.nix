@@ -37,10 +37,10 @@
                 logLevel = "debug";
                 healthCheckTimeout = 300;
                 models = {
-                    "qwen-3.5-27b-thinking-unsloth" = {
+                    "qwen-3.6-27b-thinking-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/Qwen3.5-27B-GGUF:UD-Q4_K_XL \
+                            -hf unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
                             -ngl 99 \
                             --flash-attn auto \
@@ -49,22 +49,24 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 100000 \
+                            --ctx-size 128000 \
                             --parallel 1 \
                             --temp 0.6 \
                             --top-p 0.95 \
                             --top-k 20 \
                             --min-p 0 \
-                            --chat-template-kwargs "{\"enable_thinking\": true}" \
+                            --presence-penalty 0.0 \
+                            --repeat-penalty 1.0 \
+                            --chat-template-kwargs "{\"enable_thinking\": true, \"preserve_thinking\": true}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
                         '';
                     };
 
-                    "qwen-3.5-27b-instruct-unsloth" = {
+                    "qwen-3.6-27b-instruct-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/Qwen3.5-27B-GGUF:UD-Q4_K_XL \
+                            -hf unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
                             -ngl 99 \
                             --flash-attn auto \
@@ -73,13 +75,14 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 100000 \
+                            --ctx-size 128000 \
                             --parallel 1 \
-                            --temp 1.0 \
-                            --top-p 0.95 \
+                            --temp 0.7 \
+                            --top-p 0.80 \
                             --top-k 20 \
                             --min-p 0 \
                             --presence-penalty 1.5 \
+                            --repeat-penalty 1.0 \
                             --chat-template-kwargs "{\"enable_thinking\": false}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}

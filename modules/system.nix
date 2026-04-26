@@ -125,7 +125,10 @@ in {
   };
 
   # Enable docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings.features.cdi = true;
+  };
 
   # Enable VirtualBox
   virtualisation.virtualbox.host.enable = true;

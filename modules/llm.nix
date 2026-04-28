@@ -125,7 +125,7 @@
                     "qwen-3.6-35b-a3b-thinking-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS \
+                            -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_NL_XL \
                             --jinja \
                             -ngl 99 \
                             --flash-attn auto \
@@ -151,7 +151,7 @@
                     "qwen-3.6-35b-a3b-instruct-unsloth" = {
                         cmd = ''
                           ${llama-server} \
-                            -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS \
+                            -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_NL_XL \
                             --jinja \
                             -ngl 99 \
                             --flash-attn auto \

@@ -49,7 +49,7 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 128000 \
+                            --ctx-size 120000 \
                             --parallel 1 \
                             --temp 0.6 \
                             --top-p 0.95 \
@@ -75,7 +75,7 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 128000 \
+                            --ctx-size 120000 \
                             --parallel 1 \
                             --temp 0.7 \
                             --top-p 0.80 \

@@ -16,7 +16,7 @@ let
 
   piSettings = {
     defaultProvider = "llama-swap";
-    defaultModel = "qwen-3.6-35b-a3b-thinking-unsloth";
+    defaultModel = "qwen-3.6-27b-thinking-unsloth";
     defaultThinkingLevel = "high";
     hideThinkingBlock = false;
     packages = [

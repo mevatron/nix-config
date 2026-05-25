@@ -44,7 +44,7 @@ let
           thinking = "medium";
         };
         planner = {
-          model = subagentRoutineModel;
+          model = "~moonshotai/kimi-latest";
           thinking = "high";
         };
         worker = {

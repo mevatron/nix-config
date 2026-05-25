@@ -10,6 +10,10 @@ let
     cacheWrite = 0;
   };
 
+  subagentRoutineModel = "llama-swap/qwen-3.6-27b-thinking-unsloth";
+  subagentScoutModel = "llama-swap/qwen-3.6-35b-a3b-thinking-unsloth";
+  subagentOracleModel = "openrouter/openai/gpt-5.5";
+
   piSettings = {
     defaultProvider = "llama-swap";
     defaultModel = "qwen-3.6-35b-a3b-thinking-unsloth";
@@ -29,6 +33,42 @@ let
       "qwen/qwen3-*"
       "deepseek/*"
     ];
+    subagents = {
+      agentOverrides = {
+        scout = {
+          model = subagentScoutModel;
+          thinking = "low";
+        };
+        context-builder = {
+          model = subagentRoutineModel;
+          thinking = "medium";
+        };
+        planner = {
+          model = subagentRoutineModel;
+          thinking = "high";
+        };
+        worker = {
+          model = subagentRoutineModel;
+          thinking = "high";
+        };
+        reviewer = {
+          model = subagentRoutineModel;
+          thinking = "high";
+        };
+        delegate = {
+          model = subagentRoutineModel;
+          thinking = "medium";
+        };
+        researcher = {
+          model = subagentRoutineModel;
+          thinking = "medium";
+        };
+        oracle = {
+          model = subagentOracleModel;
+          thinking = "high";
+        };
+      };
+    };
   };
 
   qwenThinkingModel = id: name: contextWindow: {

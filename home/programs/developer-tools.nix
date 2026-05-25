@@ -20,9 +20,11 @@
         jetbrains.idea
 
         (llama-cpp.override { cudaSupport = true; })
+        pkgs.bubblewrap
         llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex
         llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.junie
         llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
+        pkgs.socat
 
         pkgs.poetry
         python3

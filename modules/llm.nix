@@ -14,7 +14,7 @@
     services = {
         open-webui = {
             enable = true;
-            package = pkgs-unstable.open-webui;
+            package = pkgs-master.open-webui;
             host = "0.0.0.0";
             environment = {
                 HOME = "/var/lib/open-webui";

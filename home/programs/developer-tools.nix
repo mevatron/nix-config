@@ -22,7 +22,7 @@
         (llama-cpp.override { cudaSupport = true; })
         llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex
         llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.junie
-        llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mistral-vibe
+        llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
 
         pkgs.poetry
         python3

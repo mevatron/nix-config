@@ -57,6 +57,7 @@
                             --min-p 0 \
                             --presence-penalty 0.0 \
                             --repeat-penalty 1.0 \
+                            --metrics \
                             --chat-template-kwargs "{\"enable_thinking\": true, \"preserve_thinking\": true}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
@@ -83,6 +84,7 @@
                             --min-p 0 \
                             --presence-penalty 1.5 \
                             --repeat-penalty 1.0 \
+                            --metrics \
                             --chat-template-kwargs "{\"enable_thinking\": false}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
@@ -142,6 +144,7 @@
                             --min-p 0 \
                             --presence-penalty 0.0 \
                             --repeat-penalty 1.0 \
+                            --metrics \
                             --chat-template-kwargs "{\"enable_thinking\": true, \"preserve_thinking\": true}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
@@ -168,6 +171,7 @@
                             --min-p 0 \
                             --presence-penalty 1.5 \
                             --repeat-penalty 1.0 \
+                            --metrics \
                             --chat-template-kwargs "{\"enable_thinking\": false}" \
                             --host 127.0.0.1 \
                             --port ''${PORT}
@@ -181,6 +185,7 @@
 
     systemd.services.llama-swap.serviceConfig = {
         StateDirectory = "llama-swap";
+        ProcSubset = lib.mkForce "all";
         Environment = [
             "HOME=/var/lib/llama-swap"
             "XDG_CACHE_HOME=/var/lib/llama-swap/.cache"

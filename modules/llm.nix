@@ -33,6 +33,10 @@
             settings = let
                 llama-cpp = (pkgs-unstable.llama-cpp.override { cudaSupport = true; });
                 llama-server = lib.getExe' llama-cpp "llama-server";
+                qwenFixedChatTemplate = pkgs-master.fetchurl {
+                    url = "https://huggingface.co/froggeric/Qwen-Fixed-Chat-Templates/raw/main/chat_template.jinja";
+                    hash = "sha256-Rkmz+j2z/aTVEXPtT/AXX95+zou8651ZXQTYYgIMl0Y=";
+                };
             in {
                 logLevel = "debug";
                 healthCheckTimeout = 300;
@@ -42,6 +46,7 @@
                           ${llama-server} \
                             -hf unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
+                            --chat-template-file ${qwenFixedChatTemplate} \
                             -ngl 99 \
                             --flash-attn auto \
                             --swa-full \
@@ -69,6 +74,7 @@
                           ${llama-server} \
                             -hf unsloth/Qwen3.6-27B-GGUF:UD-Q4_K_XL \
                             --jinja \
+                            --chat-template-file ${qwenFixedChatTemplate} \
                             -ngl 99 \
                             --flash-attn auto \
                             --swa-full \
@@ -129,6 +135,7 @@
                           ${llama-server} \
                             -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_NL_XL \
                             --jinja \
+                            --chat-template-file ${qwenFixedChatTemplate} \
                             -ngl 99 \
                             --flash-attn auto \
                             --swa-full \
@@ -156,6 +163,7 @@
                           ${llama-server} \
                             -hf unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_NL_XL \
                             --jinja \
+                            --chat-template-file ${qwenFixedChatTemplate} \
                             -ngl 99 \
                             --flash-attn auto \
                             --swa-full \

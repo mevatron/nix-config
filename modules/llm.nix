@@ -69,6 +69,35 @@
                         '';
                     };
 
+                    "qwen-3.6-27b-thinking-moq" = {
+                        cmd = ''
+                          ${llama-server} \
+                            -hf kaitchup/Qwen3.6-27B-GGUF-MoQ \
+                            --hf-file MoQ-4.5.gguf \
+                            --jinja \
+                            --chat-template-file ${qwenFixedChatTemplate} \
+                            -ngl 99 \
+                            --flash-attn auto \
+                            --swa-full \
+                            -b 1024 \
+                            -ub 512 \
+                            --cache-type-k q8_0 \
+                            --cache-type-v q8_0 \
+                            --ctx-size 120000 \
+                            --parallel 1 \
+                            --temp 0.6 \
+                            --top-p 0.95 \
+                            --top-k 20 \
+                            --min-p 0 \
+                            --presence-penalty 0.0 \
+                            --repeat-penalty 1.0 \
+                            --metrics \
+                            --chat-template-kwargs "{\"enable_thinking\": true, \"preserve_thinking\": true}" \
+                            --host 127.0.0.1 \
+                            --port ''${PORT}
+                        '';
+                    };
+
                     "qwen-3.6-27b-instruct-unsloth" = {
                         cmd = ''
                           ${llama-server} \

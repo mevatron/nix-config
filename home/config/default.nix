@@ -27,6 +27,7 @@ let
     ];
     enabledModels = [
       "qwen-3.6-*-thinking-unsloth"
+      "qwen-3.6-*-thinking-moq"
       "anthropic/claude-*"
       "openai/gpt-*"
       "google/gemini-*"
@@ -98,6 +99,7 @@ let
         };
         models = [
           (qwenThinkingModel "qwen-3.6-27b-thinking-unsloth" "Qwen 3.6 27B Thinking (llama-swap)" 120000)
+          (qwenThinkingModel "qwen-3.6-27b-thinking-moq" "Qwen 3.6 27B Thinking MoQ (llama-swap)" 120000)
           (qwenThinkingModel "qwen-3.6-35b-a3b-thinking-unsloth" "Qwen 3.6 35B A3B Thinking (llama-swap)" 180000)
         ];
       };

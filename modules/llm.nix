@@ -74,6 +74,7 @@
                           ${llama-server} \
                             -hf kaitchup/Qwen3.6-27B-GGUF-MoQ \
                             --hf-file MoQ-4.5.gguf \
+                            --mmproj-url https://huggingface.co/unsloth/Qwen3.6-27B-GGUF/resolve/main/mmproj-F16.gguf \
                             --jinja \
                             --chat-template-file ${qwenFixedChatTemplate} \
                             -ngl 99 \
@@ -83,7 +84,7 @@
                             -ub 512 \
                             --cache-type-k q8_0 \
                             --cache-type-v q8_0 \
-                            --ctx-size 120000 \
+                            --ctx-size 150000 \
                             --parallel 1 \
                             --temp 0.6 \
                             --top-p 0.95 \

@@ -42,6 +42,47 @@
   }: let
     system = "x86_64-linux";
     username = "wlucas";
+    handyPackage = pkgs-unstable.handy;
+    handyForceCpu = pkgs-unstable.writeShellApplication {
+      name = "handy-force-cpu";
+      runtimeInputs = with pkgs-unstable; [ coreutils jq ];
+      text = ''
+        settings_dir="$HOME/.local/share/com.pais.handy"
+        settings_file="$settings_dir/settings_store.json"
+
+        if [[ ! -f "$settings_file" ]]; then
+          exit 0
+        fi
+
+        temporary_file="$(mktemp "$settings_dir/settings_store.json.XXXXXX")"
+        trap 'rm -f "$temporary_file"' EXIT
+
+        jq \
+          '.transcribe_accelerator = "cpu"
+           | .ort_accelerator = "cpu"
+           | .transcribe_gpu_device = -1' \
+          "$settings_file" > "$temporary_file"
+
+        mv "$temporary_file" "$settings_file"
+        trap - EXIT
+      '';
+    };
+    handyHomeModule = {
+      systemd.user.services.handy = {
+        Unit = {
+          Description = "Handy speech-to-text";
+          After = [ "graphical-session.target" ];
+          PartOf = [ "graphical-session.target" ];
+        };
+        Service = {
+          ExecStartPre = "${handyForceCpu}/bin/handy-force-cpu";
+          ExecStart = "${handyPackage}/bin/handy --start-hidden";
+          Restart = "on-failure";
+          RestartSec = 5;
+        };
+        Install.WantedBy = [ "graphical-session.target" ];
+      };
+    };
     pkgs-unstable = import nixpkgs-unstable {
         system = system;
         config.allowUnfree = true;
@@ -86,6 +127,14 @@
           nixos-hardware.nixosModules.lenovo-legion-16aph8
           ./hosts/io
 
+          {
+            boot.kernelModules = [ "uinput" ];
+            services.udev.extraRules = ''
+              KERNEL=="uinput", GROUP="input", MODE="0660"
+            '';
+            users.users.${username}.extraGroups = [ "input" ];
+          }
+
           # add the following inline module definition
           #   here, all parameters of modules are passed to overlays
           (args: { nixpkgs.overlays = import ./overlays args; })
@@ -100,7 +149,9 @@
                 inherit pkgs-unstable pkgs-master;
                 "llm-agents" = numtide;
             };
-            home-manager.users.${username} = import ./home;
+            home-manager.users.${username} = {
+              imports = [ ./home handyHomeModule ];
+            };
           }
         ];
       };
@@ -116,6 +167,14 @@
           nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
           ./hosts/jupiter
 
+          {
+            boot.kernelModules = [ "uinput" ];
+            services.udev.extraRules = ''
+              KERNEL=="uinput", GROUP="input", MODE="0660"
+            '';
+            users.users.${username}.extraGroups = [ "input" ];
+          }
+
           # add the following inline module definition
           #   here, all parameters of modules are passed to overlays
           (args: { nixpkgs.overlays = import ./overlays args; })
@@ -130,7 +189,9 @@
                 inherit pkgs-unstable pkgs-master;
                 "llm-agents" = numtide;
             };
-            home-manager.users.${username} = import ./home;
+            home-manager.users.${username} = {
+              imports = [ ./home handyHomeModule ];
+            };
           }
         ];
       };
